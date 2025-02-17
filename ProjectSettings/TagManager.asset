@@ -2,8 +2,25 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Cool Guy
+  - Not Cool Guy
+  - OKay Guy
+  - Cannonball
+  - Floor
+  - Up Force
+  - Down Force
+  - LeftForce
+  - RightForce
+  - PrefabSpawn
+  - ColorChanger1
+  - ColorChanger2
+  - ColorChanger3
+  - ColorChanger4
+  - ColorChanger5
+  - ColorChanger6
+  - PrefabSpawner
   layers:
   - Default
   - TransparentFX
@@ -50,27 +67,3 @@ TagManager:
   - Light Layer 5
   - Light Layer 6
   - Light Layer 7
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 

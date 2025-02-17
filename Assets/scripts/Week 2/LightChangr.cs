@@ -12,6 +12,7 @@ public class LightChangr : MonoBehaviour
         ChangeLightColor(Color.green);
         this.gameObject.SetActive(isItorIsntIt);
 
+
         //Destroy(lightwewanttochange.gameObject); how to destroy object. idiot!!!!!!!!!
     }
 
@@ -45,6 +46,7 @@ public class LightChangr : MonoBehaviour
         {
             lightwewanttochange.gameObject.SetActive(true);
         }
+        
     }
 
 
@@ -59,6 +61,42 @@ public class LightChangr : MonoBehaviour
     public void ChangeLightColor(Color santaclaus)
     {
         lightwewanttochange.color = santaclaus;
+
+        if(lightwewanttochange.color == Color.yellow)
+        {
+            lightwewanttochange.intensity = 100f;
+        }
+
+        else if(lightwewanttochange.color == Color.red)
+        {
+            lightwewanttochange.transform.position += Vector3.right * 3;
+        }
+
+        else if(lightwewanttochange.color == Color.blue)
+        {
+            lightwewanttochange.gameObject.SetActive(false);
+        }
+
+        else
+        {
+            lightwewanttochange.transform.position = Vector3.zero;
+        }
+
+        if (lightwewanttochange.color == Color.green || lightwewanttochange.color == Color.red)
+        {
+            //if the color is green or red, it will run this code.
+        }
+
+        if (lightwewanttochange.color == Color.blue && lightwewanttochange.intensity > 50f)
+        {
+            //if the color is blue and the intensity of the light is greater than 50, it will run this code.
+        }
+
+        if (lightwewanttochange.color == Color.white || (lightwewanttochange.color == Color.black && lightwewanttochange.intensity <= 25))
+        {
+            //if the color is white or the the color is both black and its intensity is less than or greater than 25, it will run this code. 
+            //this is complicated....
+        }
     }
 
     private void OnEnable()
