@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class InstantiateScript2 : MonoBehaviour
 {
-    public GameObject BallPrefab;
+    public GameObject BallPrefab2;
 
-    public GameObject BallPrefabSpawn;
+    public Transform BallPrefabSpawn;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,9 +20,9 @@ public class InstantiateScript2 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "PrefabSpawner")
+       if(other.gameObject.tag == "PrefabSphere")
         {
-            Instantiate(BallPrefab, BallPrefabSpawn.transform.position, BallPrefabSpawn.transform.rotation);
+            Instantiate(BallPrefab2, BallPrefabSpawn.position, BallPrefabSpawn.rotation);
         }
     }
 }

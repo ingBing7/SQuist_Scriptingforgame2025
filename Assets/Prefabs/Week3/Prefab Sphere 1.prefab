@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 5444286333868751819}
   - component: {fileID: 3883785375030158229}
   m_Layer: 0
-  m_Name: Prefab Sphere
-  m_TagString: PrefabSphere
+  m_Name: Prefab Sphere 1
+  m_TagString: Cool Guy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -61,12 +61,15 @@ public class PrefabBallScript : MonoBehaviour
             otherObject.gameObject.GetComponent<MeshRenderer>().material.color = Color.magenta;
         }
 
-        if (otherObject.gameObject.tag == "ColorChanger6")
+        else if (otherObject.gameObject.tag == "ColorChanger6")
         {
             otherObject.gameObject.GetComponent<MeshRenderer>().material.color = Color.cyan;
         }
 
-
+        if (otherObject.gameObject.tag == "LeftForce")
+        {
+            this.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.left * 750);
+        }
 
     }
 }
