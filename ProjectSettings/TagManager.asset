@@ -22,6 +22,7 @@ TagManager:
   - ColorChanger6
   - PrefabSpawner
   - PrefabSphere
+  - Boo
   layers:
   - Default
   - TransparentFX
