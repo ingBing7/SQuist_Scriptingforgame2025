@@ -1,26 +1,42 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BooMovement : MonoBehaviour
 {
-    public Rigidbody rbody;
-    public Vector3 MoveDir;
-    public float Speed;
+    public float speed = 2f;
+    private float timer = 0f;
+    private Vector3 targetPosition;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rbody = GetComponent<Rigidbody>();
         ChangeDirection();
     }
 
     // Update is called once per frame
     void Update()
     {
-        rbody.AddForce(MoveDir * Speed * Time.deltaTime);
+        timer += Time.deltaTime;
+
+        if(timer > 1f)
+        {
+            ChangeDirection();
+            timer = 0f;
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+
+
     }
 
     void ChangeDirection()
     {
-        MoveDir = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
+        targetPosition = new Vector3(Random.Range(-15f, 15f), transform.position.y, Random.Range(-15f, 15f));
     }
+
+    void MeshRendererDisabled()
+    {
+        this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+    }
+
 }
