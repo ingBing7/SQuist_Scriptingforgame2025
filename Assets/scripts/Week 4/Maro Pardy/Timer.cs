@@ -36,6 +36,8 @@ public class Timer : MonoBehaviour
                 hasTimerFinished = true;
                 Timeleft = 0f;
                 updateTimer();
+
+                counterScript.AllowCountingScript();
             }
         }
     }

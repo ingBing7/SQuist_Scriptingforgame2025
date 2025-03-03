@@ -85,4 +85,8 @@ public class Counter : MonoBehaviour
         loseScreen.GetComponent<MeshRenderer>().enabled = true; 
     }
 
+    public void AllowCountingScript()
+    {
+        allowCounting = false;
+    }
 }

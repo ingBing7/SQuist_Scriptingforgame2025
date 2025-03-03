@@ -26,7 +26,6 @@ public class BooMovement : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
-
     }
 
     void ChangeDirection()

@@ -23,6 +23,8 @@ TagManager:
   - PrefabSpawner
   - PrefabSphere
   - Boo
+  - Key
+  - Door
   layers:
   - Default
   - TransparentFX
