@@ -33,10 +33,4 @@ public class BooMovement : MonoBehaviour
     {
         targetPosition = new Vector3(Random.Range(-15f, 15f), transform.position.y, Random.Range(-15f, 15f));
     }
-
-    void MeshRendererDisabled()
-    {
-        this.gameObject.GetComponent<MeshRenderer>().enabled = false;
-    }
-
 }

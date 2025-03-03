@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class Counter : MonoBehaviour
 {
@@ -9,10 +10,19 @@ public class Counter : MonoBehaviour
 
     public bool allowCounting = true;
 
+    public BooListCreator creator;
+
+    public GameObject winScreen;
+
+    public GameObject loseScreen;
+
+    public Timer timer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        loseScreen.GetComponent<MeshRenderer>().enabled = false;
+        winScreen.GetComponent<MeshRenderer>().enabled = false;
     }
 
     // Update is called once per frame
@@ -29,6 +39,16 @@ public class Counter : MonoBehaviour
             {
                 CountUp();
             }
+        }
+
+        if(counterNumber == 0)
+        {
+            WinScreen();
+        }
+
+        if (counterNumber == 0)
+        {
+            LoseScreen();
         }
     }
 
@@ -54,4 +74,15 @@ public class Counter : MonoBehaviour
     {
         counterText.text = counterNumber.ToString();
     }
+
+    void WinScreen()
+    {
+        winScreen.GetComponent<MeshRenderer>().enabled = true; 
+    }
+
+    void LoseScreen()
+    {
+        loseScreen.GetComponent<MeshRenderer>().enabled = true; 
+    }
+
 }

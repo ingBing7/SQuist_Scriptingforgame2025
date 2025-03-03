@@ -5,6 +5,9 @@ using UnityEngine;
 public class ListTest : MonoBehaviour
 {
     public List<Cannonball> cannonballs = new List<Cannonball>();
+
+    public GameObject booPrefab;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
