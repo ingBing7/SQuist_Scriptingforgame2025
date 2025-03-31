@@ -5,7 +5,13 @@ public class BooListCreator : MonoBehaviour
 {
     public List<Boo> boos = new List<Boo>();
     public GameObject booPrefab;
-    private float randomBooAmount;
+    public int randomBooAmount;
+    public Counter counterScript;
+    public GameObject winScreen;
+    public GameObject loseScreen;
+    public AudioSource winAudio;
+    public AudioSource loseAudio;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     /*
@@ -19,10 +25,22 @@ public class BooListCreator : MonoBehaviour
     this shit dont work.
     */
     // Update is called once per frame
-    
+
     void Start()
     {
-        randomBooAmount = Random.Range(20f, 30f);
+        loseScreen.SetActive(false);
+        winScreen.SetActive(false);
+        RandomBooCreator();
+    }
+
+    void Update()
+    {
+        CheckPlayerAnswer();
+    }
+
+    public void RandomBooCreator()
+    {
+        randomBooAmount = Random.Range(10, 20);
 
         for (int i = 0; i < randomBooAmount; i++)
         {
@@ -31,10 +49,24 @@ public class BooListCreator : MonoBehaviour
         }
     }
 
-    // im so smart B) for loops foreva
-
-    void Update()
+    public void CheckPlayerAnswer()
     {
-        
+        if (counterScript.allowCounting == false)
+        {
+            {
+                if (randomBooAmount == counterScript.counterNumber)
+                {
+                    winScreen.SetActive(true);
+                    Debug.Log("you win!");
+                    winAudio.Play();
+                }
+                else
+                {
+                    loseScreen.SetActive(true);
+                    Debug.Log("You lose.....");
+                    loseAudio.Play();
+                }
+            }
+        }
     }
 }

@@ -12,17 +12,12 @@ public class Counter : MonoBehaviour
 
     public BooListCreator creator;
 
-    public GameObject winScreen;
-
-    public GameObject loseScreen;
-
     public Timer timer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        loseScreen.GetComponent<MeshRenderer>().enabled = false;
-        winScreen.GetComponent<MeshRenderer>().enabled = false;
+
     }
 
     // Update is called once per frame
@@ -41,15 +36,6 @@ public class Counter : MonoBehaviour
             }
         }
 
-        if(counterNumber == 0)
-        {
-            WinScreen();
-        }
-
-        if (counterNumber == 0)
-        {
-            LoseScreen();
-        }
     }
 
     void CountUp()
@@ -73,16 +59,6 @@ public class Counter : MonoBehaviour
     void UpdateCounterUI()
     {
         counterText.text = counterNumber.ToString();
-    }
-
-    void WinScreen()
-    {
-        winScreen.GetComponent<MeshRenderer>().enabled = true; 
-    }
-
-    void LoseScreen()
-    {
-        loseScreen.GetComponent<MeshRenderer>().enabled = true; 
     }
 
     public void AllowCountingScript()
